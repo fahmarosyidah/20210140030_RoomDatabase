@@ -57,7 +57,7 @@ fun HomeScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaToAppBar(
-                title = stringResource(DestinasiEntry.titleRes),
+                title = stringResource(DestinasiHome.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
             )
