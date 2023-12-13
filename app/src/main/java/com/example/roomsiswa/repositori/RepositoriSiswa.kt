@@ -1,4 +1,4 @@
-package com.example.roomsiswa.data.repositori
+package com.example.roomsiswa.repositori
 
 import com.example.roomsiswa.data.Siswa
 import kotlinx.coroutines.flow.Flow
