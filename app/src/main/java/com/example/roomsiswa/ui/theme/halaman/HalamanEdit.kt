@@ -19,7 +19,7 @@ object ItemEditDestination : DestinasiNavigasi {
     override val route = "item_edit"
     override val titleRes = R.string.edit_siswa
     const val itemIdArg = "itemId"
-    val routeWithArgs = "$route/{$itemIdArg"
+    val routeWithArgs = "$route/{$itemIdArg}"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,12 +40,12 @@ fun ItemEditScreen(
             )
         },
         modifier = modifier
-    ) {innerPadding ->
+    ) { innerPadding ->
         EntrySiswaBody(
             uiStateSiswa = viewModel.siswaUiState,
             onSiswaValueChange = viewModel::updateUiState,
             onSaveClick = {
-                coroutineScope.launch{
+                coroutineScope.launch {
                     viewModel.updateSiswa()
                     navigateBack()
                 }
@@ -54,3 +54,42 @@ fun ItemEditScreen(
         )
     }
 }
+//object ItemEditDestination : DestinasiNavigasi {
+//    override val route = "item_edit"
+//    override val titleRes = R.string.edit_siswa
+//    const val itemIdArg = "itemId"
+//    val routeWithArgs = "$route/{$itemIdArg"
+//}
+//
+//@OptIn(ExperimentalMaterial3Api::class)
+//@Composable
+//fun ItemEditScreen(
+//    navigateBack: () -> Unit,
+//    onNavigateUp: () -> Unit,
+//    modifier: Modifier = Modifier,
+//    viewModel: EditViewModel = viewModel(factory = PenyediaViewModel.Factory)
+//) {
+//    val coroutineScope = rememberCoroutineScope()
+//    Scaffold(
+//        topBar = {
+//            SiswaToAppBar(
+//                title = stringResource(ItemEditDestination.titleRes),
+//                canNavigateBack = true,
+//                navigateUp = onNavigateUp
+//            )
+//        },
+//        modifier = modifier
+//    ) {innerPadding ->
+//        EntrySiswaBody(
+//            uiStateSiswa = viewModel.siswaUiState,
+//            onSiswaValueChange = viewModel::updateUiState,
+//            onSaveClick = {
+//                coroutineScope.launch{
+//                    viewModel.updateSiswa()
+//                    navigateBack()
+//                }
+//            },
+//            modifier = Modifier.padding(innerPadding)
+//        )
+//    }
+//}
